@@ -42,3 +42,7 @@
 /Gemfile.lock
 /Gemfile.local
 
+# unh
+/vendor/bundle
+/Makefile
+/bak
