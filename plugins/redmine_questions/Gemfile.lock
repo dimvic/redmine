@@ -1,0 +1,14 @@
+GEM
+  specs:
+    liquid (2.4.1)
+    redmine_crm (0.0.34)
+      liquid (< 2.6.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  redmine_crm
+
+BUNDLED WITH
+   1.13.6
