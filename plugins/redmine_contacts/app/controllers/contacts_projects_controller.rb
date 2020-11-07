@@ -21,7 +21,7 @@ class ContactsProjectsController < ApplicationController
   unloadable
 
   before_action :find_optional_project, :find_contact
-  before_action :find_related_project, only: [:destroy, :create]
+  before_action :find_related_projects, only: [:destroy, :create]
   before_action :check_count, only: :destroy
 
   accept_api_auth :create, :destroy
@@ -39,9 +39,7 @@ class ContactsProjectsController < ApplicationController
   end
 
   def create
-    Project.where(identifier: (params[:project] && params[:project][:id]) || params[:project_id] ).find_each do |project|
-      @contact.projects << project unless @contact.projects.include?(project)
-    end
+    @related_projects.each { |project| @contact.projects << project unless @contact.projects.include?(project) }
     if @contact.save
       respond_to do |format|
         format.html { redirect_to :back }
@@ -58,7 +56,7 @@ class ContactsProjectsController < ApplicationController
   end
 
   def destroy
-    @contact.projects.delete(@related_project)
+    @related_projects.each { |project| @contact.projects.delete(project) }
     respond_to do |format|
       format.html { redirect_to :back }
       format.js { render action: 'new' }
@@ -68,9 +66,11 @@ class ContactsProjectsController < ApplicationController
 
   private
 
-  def find_related_project
-    @related_project = Project.find((params[:project] && params[:project][:id]) || params[:id])
-    raise Unauthorized unless User.current.allowed_to?(:edit_contacts, @related_project)
+  def find_related_projects
+    @related_projects = Project.where(id: (params[:project] && params[:project][:id]) || params[:id]).to_a
+    @related_projects += Project.where(identifier: (params[:project] && params[:project][:id]) || params[:project_id] )
+    raise ActiveRecord::RecordNotFound unless @related_projects.any?
+    raise Unauthorized unless User.current.allowed_to?(:edit_contacts, @related_projects)
   rescue ActiveRecord::RecordNotFound
     render_404
   end

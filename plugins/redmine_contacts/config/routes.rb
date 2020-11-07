@@ -75,5 +75,5 @@
   match 'deal_contacts/:action' => 'deal_contacts', :via => [:get, :post, :delete]
   match 'deals_tasks/:action' => 'deals_tasks', :via => [:get, :post, :put]
   match 'contacts_settings/:action' => 'contacts_settings', :via => [:get, :post]
-  match 'contacts_mailer/:action' => 'contacts_mailer', :via => [:get, :post]
+  match 'contacts_mail_handler/:action' => 'contacts_mail_handler', :via => [:get, :post]
   match 'attachments/contacts_thumbnail/:id(/:size)', :controller => 'attachments', :action => 'contacts_thumbnail', :id => /\d+/, :via => :get

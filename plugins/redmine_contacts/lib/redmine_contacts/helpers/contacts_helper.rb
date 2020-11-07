@@ -21,6 +21,8 @@
 
 module RedmineContacts
   module Helper
+    include AvatarsHelper if Redmine::VERSION.to_s >= '4.1'
+
     def contact_tag_url(tag_name, options = {})
       { :controller => 'contacts',
         :action => 'index',
@@ -187,7 +189,7 @@ module RedmineContacts
 
     def contact_tag(contact, options={})
       avatar_size = options.delete(:size) || 16
-      if contact.visible? && !options[:no_link]
+      if contact.visible? && !options[:no_link] && respond_to?(:contact_path)
         contact_avatar = link_to(avatar_to(contact, :size => avatar_size), contact_path(contact, :project_id => @project), :id => "avatar")
         contact_name = link_to_source(contact, :project_id => @project)
       else

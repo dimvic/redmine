@@ -36,7 +36,6 @@ require 'redmine_contacts/patches/compatibility/user_patch.rb'
 require 'redmine_contacts/patches/compatibility_patch'
 require 'redmine_contacts/patches/issue_patch'
 require 'redmine_contacts/patches/project_patch'
-require 'redmine_contacts/patches/mailer_patch'
 require 'redmine_contacts/patches/notifiable_patch'
 require 'redmine_contacts/patches/attachments_controller_patch'
 require 'redmine_contacts/patches/auto_completes_controller_patch'
@@ -60,10 +59,10 @@ require 'redmine_contacts/liquid/liquid' if Object.const_defined?("Liquid") resc
 
 module RedmineContacts
   def self.companies_select
-    RedmineContacts.settings["select_companies_to_deal"]
+    RedmineContacts.settings['select_companies_to_deal'].to_i > 0
   end
 
-  def self.settings() Setting[:plugin_redmine_contacts].blank? ? {} : Setting[:plugin_redmine_contacts]  end
+  def self.settings() Setting[:plugin_redmine_contacts].blank? ? {} : Setting[:plugin_redmine_contacts].with_indifferent_access end
 
   def self.default_list_style
     return 'list_excerpt'

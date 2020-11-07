@@ -487,7 +487,7 @@ class Contact < ActiveRecord::Base
   end
 
   def send_notification
-    Mailer.crm_contact_add(User.current, self).deliver if Setting.notified_events.include?('crm_contact_added')
+    ContactsMailer.crm_contact_add(User.current, self).deliver if Setting.notified_events.include?('crm_contact_added')
   end
 
   def strip_email

@@ -101,6 +101,6 @@ class Note < ActiveRecord::Base
   private
 
   def send_notification
-    Mailer.crm_note_add(User.current, self).deliver if Setting.notified_events.include?('crm_note_added')
+    ContactsMailer.crm_note_add(User.current, self).deliver if Setting.notified_events.include?('crm_note_added')
   end
 end

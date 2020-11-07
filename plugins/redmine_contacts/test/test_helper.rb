@@ -59,11 +59,19 @@ module RedmineContacts
     end
 
     def with_contacts_settings(options, &block)
-      ContactsSetting.stubs(:[]).returns(nil)
-      options.each { |k, v| ContactsSetting.stubs(k).returns(v) }
+      original_settings = Setting.plugin_redmine_contacts
+      Setting.plugin_redmine_contacts = original_settings.merge(Hash[options.map {|k,v| [k, v]}])
       yield
     ensure
-      options.each { |_k, _v| ContactsSetting.unstub(:[]) }
+      Setting.plugin_redmine_contacts = original_settings
+    end
+
+    def with_redminecrm_settings(options, &block)
+      original_settings = Setting.plugin_redmine_crm
+      Setting.plugin_redmine_crm = original_settings.merge(Hash[options.map {|k,v| [k, v]}])
+      yield
+    ensure
+      Setting.plugin_redmine_crm = original_settings
     end
   end
 end

@@ -47,6 +47,7 @@ de:
   label_crm_note_hide_extras: Erweiterte Optionen ausblenden
   label_crm_note_added: Die Anmerkung wurde hinzugefügt
   label_crm_note_read_more: (weiter lesen)
+  label_crm_invoice_import: Rechnungen von CSV importieren
 
   label_deal_plural: Verkaufspotentiale
   label_crm_contractor_plural: Verkaufskontakte
@@ -55,6 +56,7 @@ de:
   label_crm_deal_edit_information: Verkaufspotential bearbeiten
   label_crm_deal_change_status: Status ändern
   label_crm_statistics: Statistiken
+  label_crm_deals_import: Verkaufspotentiale von CSV importieren
 
   label_crm_deal_status_new: Neu
   label_crm_deal_status_first_contact: Erster Kontakt
@@ -66,6 +68,9 @@ de:
   label_crm_created_on: Erstellt
 
   field_note_date: Datum der Anmerkung
+  field_background: Hintergrund
+  field_currency: Währung
+  field_contact: Kontakt
 
   field_deal_name: Name
   field_deal_background: Hintergrundinformation
@@ -158,7 +163,7 @@ de:
   field_message: Nachricht
 
   #2.0.3
-  label_crm_add_contact: Add contact
+  label_crm_add_contact: Kontakt hinzufügen
   label_contact: Kontakt
   field_age: Alter
   label_crm_vcf_import: Import von vCard
@@ -177,7 +182,7 @@ de:
   label_crm_note_type_call: Anruf
   label_crm_note_type_meeting: Besprechung
   field_deal_currency: Währung
-  label_crm_my_contacts_stats: Contacts statistics for this month
+  label_crm_my_contacts_stats: Kontaktstatistik für diesen Monat
   label_crm_contacts_created: Hinzugefügte Kontakte
   label_crm_deals_created: Hinzugefügte Verkaufspotentiale
   my_contacts_avatars: Meine Kontaktfotos
@@ -198,6 +203,7 @@ de:
   label_crm_list_list: Tabelle
   field_contacts: Kontakt
   field_companies: Unternehmen
+  label_crm_added_by: Hinzugefügt von
   label_crm_contact_note_authoring_time: Zeige Anmerkung mit Uhrzeit
   label_crm_contact_issues_filters: Ticketfilter
   label_crm_csv_import: Kontakte von CSV importieren
@@ -232,8 +238,9 @@ de:
   label_contact_note_plural: Kontaktanmerkungen
   label_deal_note_plural: Deal Anmerkungen
   label_crm_contact_all_note_plural: Alle Anmerkungen
-  error_unable_delete_deal_status: Deal Status kann nicht gelöscht werden
+  error_unable_delete_deal_status: Verkaufspotential Status kann nicht gelöscht werden
   label_crm_contacts_hidden: Verborgene Einstellungen
+
   #3.1.0
   label_crm_contact_added: Kontakt hinzugefügt
   label_crm_note_added: Kommentar hinzugefügt
@@ -289,6 +296,7 @@ de:
   label_crm_region: Bundesland
   label_crm_postcode: PLZ
   label_crm_country: Land
+  label_crm_country_code: Landescode
   label_crm_countries:
     AF: Afghanistan
     AX: Alandinseln
@@ -566,13 +574,36 @@ de:
   label_crm_last_year: Letztes Jahr
 
   #3.2.15
-  permission_export_contacts: Export contacts and deals
+  permission_export_contacts: Kontakte und Verkaufspotentiale exportieren
 
   #3.4.0
-  label_crm_deal_contact: Deal's contact
+  label_crm_deal_contact: Verkaufspotential Kontakt
 
   #3.4.1
-  label_crm_default_country: Default country
+  label_crm_default_country: Standard Land
   label_attribute_of_contact: "Kontaktname %{name}"
-  label_crm_contact_country: Contact's country
-  label_crm_contact_city: Contact's city
+  label_crm_contact_country: Kontakt Land
+  label_crm_contact_city: Kontakt Stadt
+  label_attribute_of_deals: "Verkaufspotential %{name}"
+
+  #3.4.2
+  permission_manage_public_deals_queries: Verwalte öffentliche Verkaufspotential Abfragen
+  permission_save_deals_queries: Speichere Verkaufspotential Abfragen
+  permission_manage_contact_issue_relations: Verwalte verwandte Tickets
+
+  #3.4.4
+  label_crm_pipeline: Pipeline
+  text_crm_no_deal_statuses_in_project: Kein Verkaufspotential Status im Projekt
+
+  #3.4.6
+  label_crm_contact_email: Kontaktemail
+  label_crm_light_free_version: CRM Light Free Version
+  label_crm_link_to_pro: Upgrade auf PRO
+  label_crm_link_to_pro_demo: PRO Version Live Demo
+  label_crm_link_to_more_plugins: Weitere RedmineCRM-Plugins finden Sie hier
+
+  text_crm_string_incorrect_format: ist inkorrektes Format
+  label_deal_items: Deal items
+  button_duplicate: Duplikat
+  label_crm_deal_linked_deal_error: Angebote können nicht verknüpft werden
+  label_crm_related_issues: Verwandte Tickets

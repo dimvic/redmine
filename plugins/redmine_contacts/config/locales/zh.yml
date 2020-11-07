@@ -616,7 +616,10 @@ zh:
   label_crm_link_to_pro_demo: PRO 版本演示Demo
   label_crm_link_to_more_plugins: 查找更多的 RedmineCRM 插件
 
+  text_crm_string_incorrect_format: 格式错误
+  label_deal_items: 交易商品
+  button_duplicate: 复制
 
-  text_crm_string_incorrect_format: 格式不正确
+  label_crm_deal_linked_deal_error: 交易无法链接
 
-  label_deal_items: 合作名目
+  label_crm_related_issues: 相关问题

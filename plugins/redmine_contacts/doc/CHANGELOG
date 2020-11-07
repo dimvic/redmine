@@ -4,6 +4,25 @@ Redmine CRM plugin - customer relationship management plugin for redmine
 Copyright (C) 2010-2020 RedmineUP
 http://www.redmineup.com/
 
+== 2020-08-14 v4.3.2
+
+* Fixed Note API response format
+* Fixed initial install error for redmine 4.2
+* Fixed deal contacts filter bug
+* Fixed Contact Custom Field for emails body
+
+== 2020-07-17 v4.3.1
+
+* Added Deal due date reminder rake
+* German locale update
+* Deal's products API
+* zh-TW locale added
+* Fixed time report bug
+* Fixed plugin load 
+* Fixed settings update bug
+* Fixed contact notification bug
+* Fixed contact projects relation bug
+
 == 2020-02-31 v4.3.0
 
 * Contacts and Deals relations move to Custom fields

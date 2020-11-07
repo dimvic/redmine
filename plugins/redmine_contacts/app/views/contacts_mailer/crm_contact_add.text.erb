@@ -24,7 +24,7 @@
 * <%=l(:field_assigned_to)%>: <%=h @contact.assigned_to %>
 <% if @contact.respond_to?(:custom_field_values) %>
   <% @contact.custom_field_values.each do |c| %>
-  * <%= c.custom_field.name %>: <%= show_value(c) %>
+  * <%= c.custom_field.name %>: <%= show_value(c, false) %>
   <% end -%>
 <% end %>
 <%= @contact.background %>

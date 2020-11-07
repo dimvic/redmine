@@ -11,17 +11,13 @@ END_DESC
       class DealsIssue < ActiveRecord::Base; end
       class ContactsIssue < ActiveRecord::Base; end
 
-      deals_cf = CustomField.new_subclass_instance('IssueCustomField')
-      deals_cf.safe_attributes = { name: 'Related deals (converted)',
-                                   field_format: 'deal',
-                                   is_for_all: true,
-                                   multiple: true }
+      deals_cf = CustomField.where(type: 'IssueCustomField', field_format: 'deal', name: 'Related deals (converted)')
+                            .first_or_initialize
+      deals_cf.safe_attributes = { is_for_all: true, multiple: true }
 
-      contacts_cf = CustomField.new_subclass_instance('IssueCustomField')
-      contacts_cf.safe_attributes = { name: 'Related contacts (converted)',
-                                      field_format: 'contact',
-                                      is_for_all: true,
-                                      multiple: true }
+      contacts_cf = CustomField.where(type: 'IssueCustomField', field_format: 'contact', name: 'Related contacts (converted)')
+                               .first_or_initialize
+      contacts_cf.safe_attributes = { is_for_all: true, multiple: true }
 
       deals_cf.tracker_ids = Tracker.pluck(:id)
       contacts_cf.tracker_ids = Tracker.pluck(:id)

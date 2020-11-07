@@ -599,3 +599,6 @@ ru:
   button_duplicate: Дублировать
 
   label_crm_related_issues: Связанные задачи
+
+  mail_subject_deal_reminder: "%{count} назначенных на Вас сделок в ближайшие %{days} дней"
+  mail_body_deal_reminder: "%{count} назначенных на Вас сделок на следующие %{days} дней:"

@@ -21,30 +21,28 @@ class ContactNote < Note
   unloadable
   include Redmine::SafeAttributes
 
-  belongs_to :contact, :foreign_key => :source_id
+  belongs_to :contact, foreign_key: :source_id
 
   attr_protected :id if ActiveRecord::VERSION::MAJOR <= 4
   safe_attributes 'subject', 'type_id', 'content', 'source', 'author_id'
 
-  if ActiveRecord::VERSION::MAJOR >= 4
-    if ActiveRecord::Base.connection.table_exists?('notes')
-      acts_as_activity_provider :type => 'contacts',
-                                :permission => :view_contacts,
-                                :author_key => :author_id,
-                                :scope => eager_load(:contact => :projects).where(:source_type => 'Contact')
+  join_options =
+    begin
+      if ActiveRecord::VERSION::MAJOR >= 4
+        { scope: eager_load(contact: :projects).where(source_type: 'Contact')}
+      else
+        { find_options: { include: [contact: :projects], conditions: { source_type: 'Contact' } } }
+      end
+    rescue
+      {}
     end
-  else
-    acts_as_activity_provider :type => 'contacts',
-                              :permission => :view_contacts,
-                              :author_key => :author_id,
-                              :find_options => { :include => [:contact => :projects], :conditions => { :source_type => 'Contact' } }
-  end
+  acts_as_activity_provider({ type: 'contacts', permission: :view_contacts, author_key: :author_id }.merge(join_options))
 
   scope :visible,
-        lambda { |*args| joins([:contact => :projects]).
+        lambda { |*args| joins([contact: :projects]).
                          where(Contact.visible_condition(args.shift || User.current, *args) +
                                           " AND (#{ContactNote.table_name}.source_type = 'Contact')") }
 
-  acts_as_attachable :view_permission => :view_contacts,
-                     :delete_permission => :edit_contacts
+  acts_as_attachable view_permission: :view_contacts,
+                     delete_permission: :edit_contacts
 end

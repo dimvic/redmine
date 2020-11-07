@@ -623,3 +623,6 @@ en:
   label_crm_deal_linked_deal_error: Deals can't be linked
 
   label_crm_related_issues: Related issues
+
+  mail_subject_deal_reminder: "%{count} deal(s) due in the next %{days} days"
+  mail_body_deal_reminder: "%{count} deal(s) that are assigned to you are due in the next %{days} days:"

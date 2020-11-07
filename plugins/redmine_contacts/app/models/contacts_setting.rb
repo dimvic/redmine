@@ -35,7 +35,7 @@ class ContactsSetting
     else
       assignee_settings[name.to_s] = value
     end
-    Setting[:plugin_redmine_contacts] = assignee_settings
+    Setting.plugin_redmine_contacts = assignee_settings
   end
 
   def self.contact_name_format

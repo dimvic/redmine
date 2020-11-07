@@ -1,15 +1,15 @@
-zh:
-  contacts_title: 聯系人
+zh-TW:
+  contacts_title: 聯絡人
 
   label_crm_recently_viewed: 最近瀏覽
   label_crm_gravatar_enabled: 使用頭像
   label_crm_thumbnails_enabled: 在備注顯示縮略圖
   label_crm_max_thumbnail_file_size: 最大縮略圖尺寸
-  label_crm_view_all_contacts: 所有聯系人
+  label_crm_view_all_contacts: 所有聯絡人
   label_crm_background_info: 背景信息
   label_crm_company: 公司
-  label_contact_plural: 聯系人列表
-  label_crm_contact_edit_information: 編輯聯系人信息
+  label_contact_plural: 聯絡人列表
+  label_crm_contact_edit_information: 編輯聯絡人信息
   label_crm_edit_tags: 編輯標簽
   label_crm_contact_view: 視圖
   label_crm_contact_list: 列表
@@ -17,10 +17,10 @@ zh:
   label_crm_at_company: 在
   label_crm_last_notes: 最新的備注
   label_crm_tags_plural: 標簽
-  label_crm_multi_tags_plural: 選中多個標簽
-  label_crm_single_tag_mode: 單標簽
-  label_crm_multiple_tags_mode: 多標簽
-  label_crm_contact_tag: 標簽
+  label_crm_multi_tags_plural: 選中多個標籤
+  label_crm_single_tag_mode: 單標籤
+  label_crm_multiple_tags_mode: 多標籤
+  label_crm_contact_tag: 標籤
   label_crm_time_ago: 之前
   label_crm_add_note_plural: 增加備注
   label_crm_note_plural: 備注
@@ -31,16 +31,16 @@ zh:
   label_crm_show_on_map: 在地圖上顯示
   label_crm_add_another_phone: 添加電話號碼
   label_crm_remove: 刪除
-  label_crm_related_contacts: 相關聯系人
+  label_crm_related_contacts: 相關聯絡人
   label_crm_assigned_to: 接口人
   label_crm_issue_added: 創建的問題
   label_crm_add_emails_rule: 用逗號分隔
   label_crm_add_phones_rule: 用逗號分隔
   label_crm_add_employee: 新建雇員
   label_crm_merge_duplicate_plural: 合并
-  label_crm_duplicate_plural: 可能重復的聯系人
-  label_crm_duplicate_for_plural: 可能與下列聯系人重復
-  label_crm_add_tag: + 新建標簽
+  label_crm_duplicate_plural: 可能重復的聯絡人
+  label_crm_duplicate_for_plural: 可能與下列聯絡人重復
+  label_crm_add_tag: + 新建標籤
 
   label_crm_note_show_extras: 高級 (種類, 日期, 文件)
   label_crm_note_hide_extras: 隱藏高級選項
@@ -58,7 +58,7 @@ zh:
   label_crm_deals_import: 從CSV中導入合同
 
   label_crm_deal_status_new: 新建
-  label_crm_deal_status_first_contact: 第一聯系人
+  label_crm_deal_status_first_contact: 第一聯絡人
   label_crm_deal_status_negotiations: 交涉中
   label_crm_deal_status_pending: 待定
   label_crm_deal_status_won: 達成
@@ -69,11 +69,11 @@ zh:
   field_note_date: 注釋日期
   field_background: 背景
   field_currency: 貨幣
-  field_contact: 聯系人
+  field_contact: 聯絡人
 
   field_deal_name: 姓名
   field_deal_background: 背景
-  field_deal_contact: 聯系人
+  field_deal_contact: 聯絡人
   field_deal_price: 總計
   field_price: 總計
 
@@ -92,7 +92,7 @@ zh:
   field_contact_skype: skype
   field_contact_status: 狀態
   field_contact_background: 背景
-  field_contact_tag_names: 標簽
+  field_contact_tag_names: 標籤
   field_first_name: 名
   field_last_name: 姓
   field_company: 公司
@@ -110,13 +110,13 @@ zh:
   notice_unsuccessful_save: 保存失敗
   notice_successful_merged: 合并成功
 
-  notice_merged_warning: 所有與該聯系人關聯的注釋、項目、標簽和任務將會移動到以下選擇位置.該聯系人之后將被刪除.
+  notice_merged_warning: 所有與該聯絡人關聯的注釋、項目、標籤和任務將會移動到以下選擇位置.該聯絡人之后將被刪除.
 
-  project_module_contacts: 聯系人
+  project_module_contacts: 聯絡人
 
-  permission_view_contacts: 瀏覽聯系人
-  permission_edit_contacts: 編輯聯系人
-  permission_delete_contacts: 刪除聯系人
+  permission_view_contacts: 瀏覽聯絡人
+  permission_edit_contacts: 編輯聯絡人
+  permission_delete_contacts: 刪除聯絡人
   permission_view_deals: 瀏覽合同
   permission_edit_deals: 編輯合同
   permission_delete_deals: 刪除合同
@@ -136,24 +136,24 @@ zh:
   label_crm_deal_status: 合同狀態
   field_deal_status_is_closed: 關閉
   label_crm_deal_status_new: 新建
-  permission_manage_contacts: 管理聯系人
+  permission_manage_contacts: 管理聯絡人
   label_crm_sales_funnel: 銷售漏斗
   label_crm_period: 期限
   label_crm_count: 數量
 
   #2.0.1
-  label_crm_user_format: 聯系人姓名格式
-  label_crm_my_contact_plural: 分配聯系人至我
+  label_crm_user_format: 聯絡人姓名格式
+  label_crm_my_contact_plural: 分配聯絡人至我
   label_crm_my_deal_plural: 開啟合同至我
-  label_crm_contact_view_all: 瀏覽所有聯系人
+  label_crm_contact_view_all: 瀏覽所有聯絡人
   label_crm_deal_view_all: 瀏覽所有合同
 
   #2.0.2
-  label_crm_bulk_edit_selected_contacts: 編輯所有選擇的聯系人
+  label_crm_bulk_edit_selected_contacts: 編輯所有選擇的聯絡人
   label_crm_bulk_edit_selected_deals: 編輯素有選擇的合同
-  label_crm_bulk_send_mail_selected_contacts: 發送郵件給所選聯系人
-  field_add_tags: 新建標簽
-  field_delete_tags: 刪除標簽
+  label_crm_bulk_send_mail_selected_contacts: 發送郵件給所選聯絡人
+  field_add_tags: 新建標籤
+  field_delete_tags: 刪除標籤
   label_crm_send_mail: 發送郵件
   error_empty_email: 郵件內容不可為空
   permission_send_contacts_mail: 發送郵件
@@ -162,18 +162,18 @@ zh:
   field_message: 消息
 
   #2.0.3
-  label_crm_add_contact: 新建聯系人
-  label_contact: 聯系人
+  label_crm_add_contact: 新建聯絡人
+  label_contact: 聯絡人
   field_age: 年齡
   label_crm_vcf_import: 從vCard中導入
   label_crm_mail_from: 從
-  permission_import_contacts: 導入聯系人
+  permission_import_contacts: 導入聯絡人
 
   #2.1.0
   field_company_name: 公司名
-  label_crm_recently_added_contacts: 最近創建聯系人
-  label_crm_created_by_me: 由我創建的聯系人
-  my_contacts: 我的聯系人
+  label_crm_recently_added_contacts: 最近創建聯絡人
+  label_crm_created_by_me: 由我創建的聯絡人
+  my_contacts: 我的聯絡人
   my_deals: 我的合同
 
   #2.2.0
@@ -181,15 +181,15 @@ zh:
   label_crm_note_type_call: 電話
   label_crm_note_type_meeting: 會議
   field_deal_currency: 貨幣
-  label_crm_my_contacts_stats: 聯系人當月統計
-  label_crm_contacts_created: 創建的聯系人
+  label_crm_my_contacts_stats: 聯絡人當月統計
+  label_crm_contacts_created: 創建的聯絡人
   label_crm_deals_created: 創建的合同
-  my_contacts_avatars: 我聯系人的照片
-  my_contacts_stats: 聯系人統計
+  my_contacts_avatars: 我聯絡人的照片
+  my_contacts_stats: 聯絡人統計
   label_crm_add_into: 創建至
   label_crm_delete_from: 刪除
-  label_crm_show_deaks_tab: 顯示合同標簽
-  label_crm_show_on_projects_show: 顯示項目概述中的聯系人
+  label_crm_show_deaks_tab: 顯示合同標籤
+  label_crm_show_on_projects_show: 顯示項目概述中的聯絡人
 
   #2.2.1
   label_crm_contacts_show_in_list: 在列表中顯示
@@ -200,7 +200,7 @@ zh:
   label_crm_list_excerpt: 摘錄列表
   label_crm_list_cards: 卡片
   label_crm_list_list: 表格
-  field_contacts: 聯系人
+  field_contacts: 聯絡人
   field_companies: 公司
   label_crm_added_by: 添加者
   label_crm_contact_note_authoring_time: 顯示注釋時間
@@ -215,7 +215,7 @@ zh:
   field_address: 地址
   field_phone: 電話
   field_email: 郵件
-  field_tags: 標簽
+  field_tags: 標籤
   field_last_note: 最新注釋
   field_is_company: 公司
   field_contact_full_name: 姓名
@@ -223,29 +223,29 @@ zh:
   button_contacts_delete_query: 刪除查詢
   permission_manage_public_contacts_queries: 管理公共查詢
   permission_add_deals: 新建合同
-  permission_add_contacts: 新建聯系人
+  permission_add_contacts: 新建聯絡人
   permission_save_contacts_queries: 保存查詢
 
   #2.3.3
-  label_crm_contact_show_in_app_menu: 在應用菜單中顯示聯系人
+  label_crm_contact_show_in_app_menu: 在應用菜單中顯示聯絡人
 
   #2.3.4
   label_crm_contact_show_closed_issues: 顯示關閉的問題
 
   #3.0.0
   label_crm_import: 導入
-  label_contact_note_plural: 聯系人注釋
+  label_contact_note_plural: 聯絡人注釋
   label_deal_note_plural: 合同注釋
   label_crm_contact_all_note_plural: 所有注釋
   error_unable_delete_deal_status: 不能刪除合同狀態
   label_crm_contacts_hidden: 隱藏的設置
 
   #3.1.0
-  label_crm_contact_added: 新增的聯系人
+  label_crm_contact_added: 新增的聯絡人
   label_crm_note_added: 新增的注釋
   label_crm_deal_added: 新增的合同
   label_crm_deal_updated: 更新的合同
-  text_crm_contact_added: "聯系人 %{name} 已經由 %{author}創建."
+  text_crm_contact_added: "聯絡人 %{name} 已經由 %{author}創建."
   text_crm_deal_added: "合同 %{name} 已經由 %{author}創建."
   text_crm_deal_status_changed: "合同狀態由 %{old} 更改至 %{new}"
   text_crm_deal_updated: "合同 %{name} 已經由 %{author}更新."
@@ -260,7 +260,7 @@ zh:
   label_crm_contacts_visibility_project: 項目許可
   label_crm_contacts_visibility_public: 公開
   label_crm_contacts_visibility_private: 隱藏
-  permission_view_private_contacts: 瀏覽隱藏聯系人
+  permission_view_private_contacts: 瀏覽隱藏聯絡人
   text_crm_error_on_line: '錯誤在行 %{line}: %{error}.'
 
   #3.2.0
@@ -271,21 +271,21 @@ zh:
   label_crm_deal_due_date: 到期日
 
   #3.2.2
-  label_crm_show_deals_in_top_menu: 在頂部菜單中顯示合同
+  label_crm_show_deals_in_top_menu: 在頂部選單中顯示合同
   label_crm_show_details: 顯示細節
   label_crm_has_deals: 合同
   label_crm_has_open_issues: 未決問題
   label_crm_note: 注釋
 
   #3.2.5
-  notice_failed_to_save_contacts: "不能保存 %{count} 聯系人(s)  %{total} 已選: %{ids}."
+  notice_failed_to_save_contacts: "不能保存 %{count} 聯絡人(s)  %{total} 已選: %{ids}."
 
   #3.2.6
   project_module_deals: 合同
   permission_manage_deals: 管理合同
   label_crm_deals_from_subprojects: 在子項目中顯示合同
-  label_crm_megre_tags: 合并標簽
-  label_crm_monochrome_tags: 單色標簽
+  label_crm_megre_tags: 合并標籤
+  label_crm_monochrome_tags: 單色標籤
 
   #3.2.7
   label_crm_address: 地址
@@ -559,11 +559,11 @@ zh:
     ZM: Zambia
     ZW: Zimbabwe
     AX: ?land Islands
-  label_crm_cross_project_contacts: 允許跨項目聯系人關系
+  label_crm_cross_project_contacts: 允許跨項目聯絡人關系
   label_crm_list_board: Board
   label_crm_default_list_style: 默認聯系風格
-  label_crm_show_in_top_menu: 在頂部菜單中顯示
-  label_crm_show_in_app_menu: 在應用菜單中顯示
+  label_crm_show_in_top_menu: 在頂部選單中顯示
+  label_crm_show_in_app_menu: 在應用選單中顯示
   label_crm_money_settings: 錢
   label_crm_disable_taxes: 禁用稅
   label_crm_default_tax: 默認稅值
@@ -575,8 +575,8 @@ zh:
   label_crm_decimal_separator: 十進制分隔符
 
   #3.2.10
-  label_crm_add_contact_plural: 新建聯系人
-  label_crm_search_for_contact: 搜索聯系人
+  label_crm_add_contact_plural: 新建聯絡人
+  label_crm_search_for_contact: 搜索聯絡人
   label_crm_major_currencies: 主要貨幣
 
   #3.2.11
@@ -587,16 +587,16 @@ zh:
   label_crm_last_year: 去年
 
   #3.2.15
-  permission_export_contacts: 導出聯系人和合同
+  permission_export_contacts: 導出聯絡人和合同
 
   #3.4.0
-  label_crm_deal_contact: 合同的聯系人
+  label_crm_deal_contact: 合同的聯絡人
 
   #3.4.1
   label_crm_default_country: 默認國家
-  label_attribute_of_contact: "聯系人的%{name}"
-  label_crm_contact_country: 聯系人的國家
-  label_crm_contact_city: 聯系人的城市
+  label_attribute_of_contact: "聯絡人的%{name}"
+  label_crm_contact_country: 聯絡人的國家
+  label_crm_contact_city: 聯絡人的城市
   label_attribute_of_deals: "合同的 %{name}"
 
   #3.4.2

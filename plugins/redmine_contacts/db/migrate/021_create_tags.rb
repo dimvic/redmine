@@ -25,6 +25,5 @@ class CreateTags < Rails.version < '5.1' ? ActiveRecord::Migration : ActiveRecor
   end
 
   def self.down
-    ActiveRecord::Base.drop_taggable_table
   end
 end
