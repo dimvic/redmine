@@ -216,44 +216,6 @@ ActiveRecord::Schema.define(version: 2019_06_20_135549) do
     t.string "type", collation: "utf8_general_ci"
   end
 
-  create_table "contacts_settings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "name", collation: "utf8_general_ci"
-    t.text "value", limit: 16777215, collation: "utf8_general_ci"
-    t.integer "project_id"
-    t.datetime "updated_on"
-    t.index ["project_id"], name: "index_contacts_settings_on_project_id"
-  end
-
-  create_table "contracts", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.datetime "agreement_date"
-    t.decimal "hourly_rate", precision: 16, scale: 2
-    t.decimal "purchase_amount", precision: 16, scale: 2
-    t.string "contract_url"
-    t.string "invoice_url"
-    t.integer "project_id"
-    t.boolean "is_locked", default: false
-    t.float "hours_worked"
-    t.float "billable_amount_total"
-    t.integer "project_contract_id", default: 1
-    t.integer "category_id"
-    t.boolean "is_fixed_price", default: false
-    t.integer "recurring_frequency", default: 0
-    t.integer "series_id"
-  end
-
-  create_table "contracts_expenses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "name"
-    t.date "expense_date"
-    t.float "amount"
-    t.integer "contract_id"
-    t.integer "issue_id"
-    t.string "description"
-  end
-
   create_table "custom_field_enumerations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "custom_field_id", null: false
     t.string "name", null: false
@@ -731,24 +693,6 @@ ActiveRecord::Schema.define(version: 2019_06_20_135549) do
     t.index ["type_id"], name: "index_notes_on_type_id"
   end
 
-  create_table "oic_sessions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "code"
-    t.string "state"
-    t.string "nonce"
-    t.string "session_state"
-    t.text "id_token"
-    t.string "access_token"
-    t.string "refresh_token"
-    t.datetime "expires_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["access_token"], name: "index_oic_sessions_on_access_token"
-    t.index ["id_token"], name: "index_oic_sessions_on_id_token", length: 64
-    t.index ["refresh_token"], name: "index_oic_sessions_on_refresh_token"
-    t.index ["user_id"], name: "index_oic_sessions_on_user_id"
-  end
-
   create_table "open_id_authentication_associations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "issued"
     t.integer "lifetime"
@@ -814,70 +758,6 @@ ActiveRecord::Schema.define(version: 2019_06_20_135549) do
     t.integer "query_id", null: false
     t.integer "role_id", null: false
     t.index ["query_id", "role_id"], name: "queries_roles_ids", unique: true
-  end
-
-  create_table "questions", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "subject"
-    t.text "content"
-    t.integer "section_id"
-    t.integer "status_id"
-    t.integer "author_id"
-    t.boolean "featured", default: false
-    t.boolean "locked", default: false
-    t.integer "cached_weighted_score", default: 0
-    t.integer "comments_count", default: 0
-    t.integer "answers_count", default: 0
-    t.integer "views", default: 0
-    t.integer "total_views", default: 0
-    t.datetime "created_on"
-    t.datetime "updated_on"
-    t.index ["author_id"], name: "index_questions_on_author_id"
-    t.index ["section_id"], name: "index_questions_on_section_id"
-    t.index ["status_id"], name: "index_questions_on_status_id"
-  end
-
-  create_table "questions_answers", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.text "content"
-    t.integer "author_id"
-    t.integer "question_id"
-    t.boolean "accepted", default: false
-    t.integer "cached_weighted_score", default: 0
-    t.integer "comments_count", default: 0
-    t.datetime "created_on"
-    t.datetime "updated_on"
-    t.index ["accepted"], name: "index_questions_answers_on_accepted"
-    t.index ["author_id"], name: "index_questions_answers_on_author_id"
-    t.index ["question_id"], name: "index_questions_answers_on_question_id"
-  end
-
-  create_table "questions_sections", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "project_id"
-    t.string "section_type"
-    t.integer "position"
-    t.index ["position"], name: "index_questions_sections_on_position"
-    t.index ["project_id"], name: "index_questions_sections_on_project_id"
-  end
-
-  create_table "questions_statuses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.string "name"
-    t.boolean "is_closed", default: false
-    t.string "color"
-    t.integer "position"
-    t.index ["is_closed"], name: "index_questions_statuses_on_is_closed"
-    t.index ["position"], name: "index_questions_statuses_on_position"
-  end
-
-  create_table "recently_vieweds", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.integer "viewer_id"
-    t.integer "viewed_id"
-    t.string "viewed_type", collation: "utf8_general_ci"
-    t.integer "views_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["viewed_id", "viewed_type"], name: "index_recently_vieweds_on_viewed_id_and_viewed_type"
-    t.index ["viewer_id"], name: "index_recently_vieweds_on_viewer_id"
   end
 
   create_table "repositories", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
@@ -980,24 +860,12 @@ ActiveRecord::Schema.define(version: 2019_06_20_135549) do
     t.integer "default_status_id"
   end
 
-  create_table "user_contract_rates", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "contract_id"
-    t.float "rate"
-  end
-
   create_table "user_preferences", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "user_id", default: 0, null: false
     t.text "others"
     t.boolean "hide_mail", default: true
     t.string "time_zone"
     t.index ["user_id"], name: "index_user_preferences_on_user_id"
-  end
-
-  create_table "user_project_rates", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "project_id"
-    t.float "rate"
   end
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
@@ -1142,5 +1010,4 @@ ActiveRecord::Schema.define(version: 2019_06_20_135549) do
     t.index ["tracker_id"], name: "index_workflows_on_tracker_id"
   end
 
-  add_foreign_key "oic_sessions", "users"
 end
